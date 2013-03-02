@@ -1,5 +1,164 @@
+# -*- coding: utf-8 -*-
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+
+  # ----------
+  # A
+  # ----------
+  already_registered: Already registered?
+
+  # ----------
+  # B
+  # ----------
+  blocked_user: Blocked user?
+
+  # ----------
+  # C
+  # ----------
+  cancel_my_account: Cancel my account
+  change_my_password: Change my password
+
+  # ----------
+  # D
+  # ----------
+  didnt_receive_confirmation_instructions: Didn't receive confirmation instructions?
+  didnt_receive_unlock_instructions: Didn't receive unlock instructions?
+
+  # ----------
+  # E
+  # ----------
+
+  # ----------
+  # F
+  # ----------
+  forgot_your_password: Forgot your password?
+
+  # ----------
+  # G
+  # ----------
+
+  # ----------
+  # H
+  # ----------
+
+  # ----------
+  # I
+  # ----------
+
+  # ----------
+  # J
+  # ----------
+
+  # ----------
+  # K
+  # ----------
+
+  # ----------
+  # L
+  # ----------
+
+  # ----------
+  # M
+  # ----------
+  more_links: More links
+
+  # ----------
+  # N
+  # ----------
+  new_user: New user?
+  new_over_here: New over here?
+  new_password: New password
+
+  # ----------
+  # O
+  # ----------
+  other_options: Other Options
+
+  # ----------
+  # P
+  # ----------
+
+  # ----------
+  # Q
+  # ----------
+
+  # ----------
+  # R
+  # ----------
+  register: Register
+  remember_me: Remember me
+  resend_unlock_instructions: Resend unlock instructions 
+  resend: Resend
+
+  # ----------
+  # S
+  # ----------
+  sign_out: Sign out
+  sign_in: Sign in
+  sign_up: Sign up
+  send_me_reset_password_instructions: Send me reset password instructions
+  send: Send
+  save: Salvar
+
+  # ----------
+  # T
+  # ----------
+
+
+  # ----------
+  # U
+  # ----------
+  users: Users
+  unhappy: Unhappy?
+  update: Update
+
+  # ----------
+  # V
+  # ----------
+
+  # ----------
+  # X
+  # ----------
+
+  # ----------
+  # Y
+  # ----------
+
+  # ----------
+  # Z
+  # ----------
+
+  # ----------
+  # W
+  # ----------
+
+  messages:
+    leave_blank_if_you_dont_want_to_change_it: leave blank if you don't want to change it.
+    we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes.
+    are_you_sure: Are you sure?
+
+
+  activerecord:
+    errors:
+      messages:
+        invalid: invalid
+        not_equal: not equal
+        not_formatted: 	is not in the correct format
+        blank: is blank
+        too_short: too short
+        taken: "is already in use"
+        record_invalid: "Validation Failed: %{errors}"
+        restrict_dependent_destroy:
+          one: You can not delete the existing record (%{record})
+          many: You can not delete the existing record (%{record})
+    models:
+      user: User
+    attributes:
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        current_password: Current password
+        name: Name

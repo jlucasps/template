@@ -7,6 +7,9 @@ gem 'rails', '3.2.11'
 # https://bitbucket.org/ged/ruby-pg/wiki/Home
 gem 'pg'
 
+# Flexible authentication solution for Rails with Warden.
+# https://github.com/plataformatec/devise
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
