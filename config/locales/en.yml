@@ -8,11 +8,13 @@ en:
   # A
   # ----------
   already_registered: Already registered?
+  account: Account
 
   # ----------
   # B
   # ----------
   blocked_user: Blocked user?
+  back: Back
 
   # ----------
   # C
@@ -29,6 +31,7 @@ en:
   # ----------
   # E
   # ----------
+  edit: Edit
 
   # ----------
   # F
@@ -87,7 +90,6 @@ en:
   # ----------
   # R
   # ----------
-  register: Register
   remember_me: Remember me
   resend_unlock_instructions: Resend unlock instructions 
   resend: Resend

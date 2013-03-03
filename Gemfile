@@ -11,6 +11,19 @@ gem 'pg'
 # https://github.com/plataformatec/devise
 gem 'devise'
 
+# Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
+# https://github.com/plataformatec/simple_form
+gem 'simple_form'
+
+
+group :development do
+
+  # Catches mail and serves it through a dream.
+  # https://github.com/sj26/mailcatcher
+  gem 'mailcatcher'
+
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
