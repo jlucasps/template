@@ -15,6 +15,25 @@ gem 'devise'
 # https://github.com/plataformatec/simple_form
 gem 'simple_form'
 
+group :test, :development do
+
+  # Rspec-2 for Rails-3
+  # https://github.com/rspec/rspec-rails
+  gem "rspec-rails"
+
+  # Factory_girl is a fixtures replacement with a straightforward definition syntax
+  # https://github.com/thoughtbot/factory_girl_rails
+  gem 'factory_girl_rails', "~> 4.0"
+
+  # The instafailing RSpec progress bar formatter
+  # https://github.com/jeffkreeftmeijer/fuubar
+  gem 'fuubar'
+
+  # Code coverage for Ruby 1.9 with a powerful configuration library and automatic merging of coverage across test suites
+  # https://github.com/colszowka/simplecov
+  gem 'simplecov'
+end
+
 
 group :development do
 
