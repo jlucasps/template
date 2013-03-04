@@ -21,8 +21,8 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: todoptec_prd
-  host: localhost
+  database: da4gl8v6naboh3
+  host: ec2-23-21-91-29.compute-1.amazonaws.com
   pool: 5
-  username: postgres
-  password: postgres
+  username: grjhprrkddknvq
+  password: QW_9YZHKao_Y-x3l3lUyH1juxQ
