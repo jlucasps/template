@@ -1,10 +1,12 @@
 
+<%= bootstrap_flash %>
+
 <h3>
   <%= t('my_todo_lists')  %>
 </h3>
 
-
+<%= render :partial => 'lists', :locals => {:user => @user, :lists => @user.lists} %>
 
 <% content_for :sidebar do %>
-  <%= render :partial => 'shared/users_navlist', :locals => {:users => @other_users, :user_viewed => nil} %>
+  <%= render :partial => 'shared/users_navlist', :locals => {:users => @other_users, :user_viewed => @user} %>
 <% end %>

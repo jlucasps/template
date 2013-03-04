@@ -1,6 +1,41 @@
+<div class="pull-right spaced">
+  <%= link_to t('new_todo_list'), new_user_list_path(user), :class => "btn btn-mini btn-success" %>
+</div>
+<br style="clear: both;"/> <hr/>
 
-<h3>
-  It works!
-</h3>
+<% if lists.empty? %>
+  <%= bootstrap_alert('', t('no_lists_yet'), Const::ALERT_INFO) %>
+<% else %>
+  <% lists.each do |list| %>
+    <div class="row row-fluid well">
+      <div class="span1">
+        <% icon_file = list.private? ? "lock" : "globe-blue" %>
+        <% alt_text =  list.private? ? t('private') : t('public') %>
+        <%= icon_128x128(icon_file, :width => '32px', :height => '32px', :alt => alt_text, :text => alt_text) %>
+        <em><%= alt_text %></em>
+      </div>
+
+      <div class="span9">
+        <h6><%= link_to list.name.html_safe, user_list_path(user, list) %></h6>
+      </div>
+
+      <div class="span2">
+        <div class="btn-group">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <%= t('options') %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "<i class='icon-star'></i> #{t('favorite')}".html_safe, "#" %></li>
+            <% if list.owner?(current_user) %>
+              <li><%= link_to "<i class='icon-edit'></i> #{t('edit')}".html_safe, edit_user_list_path(user, list)%></li>
+              <li><%= link_to "<i class='icon-trash'></i> #{t('remove')}".html_safe, [list.user, list], :method => :delete, :confirm => t('are_you_sure')%></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
 
 

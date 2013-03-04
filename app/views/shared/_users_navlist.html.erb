@@ -2,8 +2,7 @@
 <% if users.any? %>
   <ul class="nav nav-list well">
     <% users.each do |user| %>
-      <% active = (user_viewed.present? and user_viewed == user) ? "active" : "" %>
-      <li class="<%= active %>"><%= link_to user.name, user_lists_path(user) %></li>
+      <li class="<%= "active" if user_viewed == user %>"><%= link_to user.name, user_lists_path(user) %></li>
     <% end %>
   </ul>
 <% else %>

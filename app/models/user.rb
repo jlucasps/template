@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   # Validations
   validates :name, :presence => true, :allow_blank => false
 
+  # Associations
+  has_many :lists, :dependent => :destroy
 
   # Scopes
   default_scope order("users.name")

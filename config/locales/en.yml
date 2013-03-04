@@ -10,6 +10,7 @@ en:
   already_registered: Already registered?
   account: Account
   attention: Attention
+  are_you_sure: Are you sure?
 
   # ----------
   # B
@@ -22,6 +23,7 @@ en:
   # ----------
   cancel_my_account: Cancel my account
   change_my_password: Change my password
+  create: Create
 
   # ----------
   # D
@@ -33,12 +35,14 @@ en:
   # E
   # ----------
   edit: Edit
+  edit_todo_list: Edit Todo List
   error: Error
 
   # ----------
   # F
   # ----------
   forgot_your_password: Forgot your password?
+  favorite: Favorite
 
   # ----------
   # G
@@ -79,15 +83,21 @@ en:
   new_over_here: New over here?
   new_password: New password
   no_other_user: No other user
+  new_todo_list: New Todo List 
+  no_lists_yet: No lists yet
 
   # ----------
   # O
   # ----------
   other_options: Other Options
+  only_you_can_see_private_lists: (Only you can see private lists)
+  options: Options
 
   # ----------
   # P
   # ----------
+  public: Public
+  private: Private
 
   # ----------
   # Q
@@ -99,6 +109,7 @@ en:
   remember_me: Remember me
   resend_unlock_instructions: Resend unlock instructions 
   resend: Resend
+  remove: Remove
 
   # ----------
   # S

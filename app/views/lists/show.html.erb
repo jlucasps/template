@@ -1,0 +1,11 @@
+<%= bootstrap_flash %>
+<h3>
+  <%= @list.name %>
+</h3>
+
+
+
+<% content_for :sidebar do %>
+  <h4><%= t('other_options') %></h4>
+  <%= link_to t('new_todo_list'), new_user_list_path(@list.user), :class => "btn btn-mini btn-success" %>
+<% end %>

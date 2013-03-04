@@ -15,6 +15,10 @@ gem 'devise'
 # https://github.com/plataformatec/simple_form
 gem 'simple_form'
 
+# A set of Rails 3 responders to dry up your application
+# https://github.com/plataformatec/responders
+gem 'responders'
+
 group :test, :development do
 
   # Rspec-2 for Rails-3
