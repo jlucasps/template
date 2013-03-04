@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+# A very fast & simple Ruby web server
+# https://github.com/macournoyer/thin/
+gem 'thin'
 
 # Pg is the Ruby interface to the PostgreSQL RDBMS.
 # https://bitbucket.org/ged/ruby-pg/wiki/Home
