@@ -1,7 +1,5 @@
 <%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => "box-signin" }) do |f| %>
 
-  <%= bootstrap_flash %>
-
   <%= f.error_notification %>
   <%= f.full_error :unlock_token %>
 

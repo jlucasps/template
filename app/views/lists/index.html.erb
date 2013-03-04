@@ -1,6 +1,4 @@
 
-<%= bootstrap_flash %>
-
 <h3><%= t('user_name_todo_lists', :user_name => @user.name)  %></h3>
 
 <%= render :partial => 'lists', :locals => {:user => @user, :lists => @user.lists.public} %>

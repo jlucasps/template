@@ -1,6 +1,5 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "box-signin" }) do |f| %>
-  <%= bootstrap_flash %>
   <%= f.error_notification %>
 
   <h2><%= t('forgot_your_password') %></h2>
