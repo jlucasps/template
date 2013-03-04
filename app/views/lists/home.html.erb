@@ -1,0 +1,10 @@
+
+<h3>
+  <%= t('my_todo_lists')  %>
+</h3>
+
+
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'shared/users_navlist', :locals => {:users => @other_users, :user_viewed => nil} %>
+<% end %>

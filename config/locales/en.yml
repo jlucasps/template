@@ -9,6 +9,7 @@ en:
   # ----------
   already_registered: Already registered?
   account: Account
+  attention: Attention
 
   # ----------
   # B
@@ -32,6 +33,7 @@ en:
   # E
   # ----------
   edit: Edit
+  error: Error
 
   # ----------
   # F
@@ -45,10 +47,12 @@ en:
   # ----------
   # H
   # ----------
+  home: Home
 
   # ----------
   # I
   # ----------
+  info: Info
 
   # ----------
   # J
@@ -66,6 +70,7 @@ en:
   # M
   # ----------
   more_links: More links
+  my_todo_lists: My todo Lists
 
   # ----------
   # N
@@ -73,6 +78,7 @@ en:
   new_user: New user?
   new_over_here: New over here?
   new_password: New password
+  no_other_user: No other user
 
   # ----------
   # O
@@ -103,10 +109,12 @@ en:
   send_me_reset_password_instructions: Send me reset password instructions
   send: Send
   save: Salvar
+  success: Success
 
   # ----------
   # T
   # ----------
+  todo_lists_app: Todo Lists App
 
 
   # ----------
@@ -115,6 +123,8 @@ en:
   users: Users
   unhappy: Unhappy?
   update: Update
+  user_name_todo_lists: "%{user_name}'s Todo Lists"
+
 
   # ----------
   # V

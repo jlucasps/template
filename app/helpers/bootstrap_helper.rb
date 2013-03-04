@@ -36,10 +36,4 @@ module BootstrapHelper
     end
     msg.html_safe
   end
-
-  def link_label(icon, label)
-    "<i class='#{icon}'></i>&nbsp;&nbsp;".html_safe + label
-  end
-
-
 end

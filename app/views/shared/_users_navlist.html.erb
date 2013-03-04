@@ -1,0 +1,11 @@
+<h4><%= t('users') %></h4>
+<% if users.any? %>
+  <ul class="nav nav-list well">
+    <% users.each do |user| %>
+      <% active = (user_viewed.present? and user_viewed == user) ? "active" : "" %>
+      <li class="<%= active %>"><%= link_to user.name, user_lists_path(user) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= bootstrap_alert('', t('no_other_user'), Const::ALERT_INFO) %>
+<% end %>

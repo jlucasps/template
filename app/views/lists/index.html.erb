@@ -1,9 +1,6 @@
-
-<%= link_to "<i class='icon-remove'></i>&nbsp;#{t('sign_out')}".html_safe, destroy_user_session_path(), {:class => "btn btn-small btn-danger pull-right spaced", :method => :delete} %>
-<%= link_to "<i class='icon-user'></i>&nbsp;#{t('account')}".html_safe, edit_user_registration_path(), :class => "btn btn-small pull-right spaced" %>
+<h3><%= t('user_name_todo_lists', :user_name => @user_viewed.name)  %></h3>
 
 
-<h3>
-  It works!
-</h3>
-
+<% content_for :sidebar do %>
+  <%= render :partial => 'shared/users_navlist', :locals => {:users => @other_users, :user_viewed => @user_viewed} %>
+<% end %>

@@ -1,0 +1,19 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to t('todo_lists_app'), home_path, :class => "brand" %>
+      <div class="nav-collapse collapse pull-right">
+        <ul class="nav">
+          <li class="active"><%= link_to "<i class='icon-home icon-white'></i>&nbsp;#{t('home')}".html_safe, home_path %></li>
+          <li><%= link_to "<i class='icon-user icon-white'></i>&nbsp;#{t('account')}".html_safe, edit_user_registration_path()%></li>
+          <li><%= link_to "<i class='icon-remove icon-white'></i>&nbsp;#{t('sign_out')}".html_safe, destroy_user_session_path(), {:method => :delete} %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

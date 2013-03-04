@@ -1,3 +1,6 @@
+body {
+  padding-top: 60px;
+}
 .box-signin {
   max-width: 300px;
   padding: 19px 29px 29px;
@@ -21,8 +24,4 @@
   height: auto;
   margin-bottom: 15px;
   padding: 7px 9px;
-}
-
-.spaced {
-  margin: 5px;
 }

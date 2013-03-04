@@ -8,7 +8,25 @@
 </head>
 <body>
 
-<%= yield %>
+  <%= render :partial => 'shared/navbar' %>
+
+  <div class="container">
+
+    <% if user_signed_in? %>
+      <div class="row-fluid">
+        <div class="span6">
+          <%= yield %>
+        </div>
+
+        <div class="span3 offset3">
+          <%= yield :sidebar %>
+        </div>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
+
+  </div>
 
 </body>
 </html>

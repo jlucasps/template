@@ -6,7 +6,18 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
+
   # Validations
   validates :name, :presence => true, :allow_blank => false
+
+
+  # Scopes
+  default_scope order("users.name")
+
+
+  # Public methods
+  def other_users
+    User.where("id != ?", self.id)
+  end
 
 end
