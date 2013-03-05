@@ -1,5 +1,5 @@
 <div class="row row-fluid well well-small">
-  <% favorite = user.favorite?(list) %>
+  <% favorite = current_user.favorite?(list) %>
 
   <div class="span1">
     <% icon_file = list.private? ? "lock" : "globe-blue" %>
@@ -20,11 +20,11 @@
       </a>
       <ul class="dropdown-menu">
       <% if favorite %>
-        <li><%= link_to "<i class='icon-star'></i> #{t('unfavorite')}".html_safe, [favorite.user, favorite.list, favorite], :method => :delete, :remote => true %></li>
+        <li><%= link_to "<i class='icon-star'></i> #{t('unfavorite')}".html_safe, [current_user, favorite.list, favorite], :method => :delete, :remote => true %></li>
       <% else %>
-        <li><%= link_to "<i class='icon-star'></i> #{t('favorite')}".html_safe, user_list_favorites_path(user, list), :method => :post, :remote => true %></li>
+        <li><%= link_to "<i class='icon-star'></i> #{t('favorite')}".html_safe, user_list_favorites_path(current_user, list), :method => :post, :remote => true %></li>
       <% end %>
-      <% if list.owner?(current_user) %>
+      <% if list.is_the_owner?(current_user) %>
         <li><%= link_to "<i class='icon-edit'></i> #{t('edit')}".html_safe, edit_user_list_path(user, list)%></li>
         <li><%= link_to "<i class='icon-trash'></i> #{t('remove')}".html_safe, [list.user, list], :method => :delete, :confirm => t('are_you_sure')%></li>
       <% end %>

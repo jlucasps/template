@@ -1,0 +1,10 @@
+
+<h3><%= t('favorites')  %></h3>
+<% current_user.favorites.each do |favorite| %>
+  <%= render :partial => 'lists/list_sample', :locals => {:list => favorite.list, :user => current_user} %>
+<% end %>
+
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'shared/quick_links' %>
+<% end %>

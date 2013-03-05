@@ -11,12 +11,14 @@
   <% end %>
 </div>
 
-<%= simple_form_for([list.user, list, Task.new], :remote => true) do |f| %>
+<% if list.is_the_owner?(current_user) %>
+  <%= simple_form_for([list.user, list, Task.new], :remote => true) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.hidden_field :list_id, :value => list.id %>
-    <%= f.input :description, :required => true, :autofocus => true , :as => :text,
-                :input_html => {:rows => 2,:class => "input-block-level"}  %>
-  </div>
-  <%= f.button :submit, t('save') %>
+    <div class="form-inputs">
+      <%= f.hidden_field :list_id, :value => list.id %>
+      <%= f.input :description, :required => true, :autofocus => true , :as => :text,
+                  :input_html => {:rows => 2,:class => "input-block-level"}  %>
+    </div>
+    <%= f.button :submit, t('save') %>
+  <% end %>
 <% end %>

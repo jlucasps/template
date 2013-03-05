@@ -29,13 +29,13 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
-    redirect_to home_path if !@list.owner?(current_user)
+    redirect_to home_path if !@list.is_the_owner?(current_user)
     @user = @list.user
   end
 
   def update
     @list = List.find(params[:id])
-    redirect_to home_path unless @list.owner?(current_user)
+    redirect_to home_path unless @list.is_the_owner?(current_user)
     @list.update_attributes(params[:list])
     respond_with @list.user, @list
   end

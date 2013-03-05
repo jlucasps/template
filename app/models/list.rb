@@ -17,7 +17,7 @@ class List < ActiveRecord::Base
   scope :public, where(:private => false)
 
   # Public methods
-  def owner?(user)
+  def is_the_owner?(user)
     self.user == user
   end
 

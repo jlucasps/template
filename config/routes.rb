@@ -11,4 +11,6 @@ Todoptec::Application.routes.draw do
     end
   end
 
+  match "favorites" => "users#favorites", :as => :favorites
+
 end
