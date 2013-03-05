@@ -24,13 +24,13 @@ describe ListsController do
     it "assigns @other_users" do
       get :index, {:user_id => user_bart.id}
       assigns(:other_users).should eq(other_users)
-      assigns(:user_viewed).should eq(user_bart)
+      assigns(:user).should eq(user_bart)
     end
 
     it "assigns @user_viewed" do
       get :index, {:user_id => user_bart.id}
       assigns(:other_users).should eq(other_users)
-      assigns(:user_viewed).should eq(user_bart)
+      assigns(:user).should eq(user_bart)
     end
 
   end

@@ -5,7 +5,9 @@ Todoptec::Application.routes.draw do
   root :to => "lists#home", :as => :home
 
   resources :users do
-    resources :lists
+    resources :lists do
+      resources :favorites
+    end
   end
 
 end

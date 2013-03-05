@@ -10,11 +10,9 @@ class List < ActiveRecord::Base
   # Associations
   belongs_to :user
 
-
   # Scopes
   default_scope order("lists.created_at DESC")
   scope :public, where(:private => false)
-
 
   # Public methods
   def owner?(user)

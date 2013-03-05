@@ -6,6 +6,7 @@ class CreateLists < ActiveRecord::Migration
       t.references :user, :foreign_key => true
       t.timestamps
     end
+    add_index :lists, :user_id
   end
 
 end

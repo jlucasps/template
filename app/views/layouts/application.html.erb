@@ -15,7 +15,9 @@
     <% if user_signed_in? %>
       <div class="row-fluid">
         <div class="span6">
-          <%= bootstrap_flash %>
+          <div id="bootstrap_flash_message">
+            <%= bootstrap_flash %>
+          </div>
           <%= yield %>
         </div>
 
@@ -24,7 +26,9 @@
         </div>
       </div>
     <% else %>
-      <%= bootstrap_flash %>
+      <div id="bootstrap_flash_message">
+        <%= bootstrap_flash %>
+      </div>
       <%= yield %>
     <% end %>
 

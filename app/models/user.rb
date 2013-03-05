@@ -12,14 +12,17 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :lists, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy
 
   # Scopes
   default_scope order("users.name")
-
 
   # Public methods
   def other_users
     User.where("id != ?", self.id)
   end
 
+  def favorite?(list)
+    self.favorites.where(:list_id => list).first
+  end
 end

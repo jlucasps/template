@@ -10,8 +10,10 @@
       <div class="nav-collapse collapse pull-right">
         <ul class="nav">
           <li><%= link_to "<i class='icon-home icon-white'></i>&nbsp;#{t('home')}".html_safe, home_path %></li>
-          <li><%= link_to "<i class='icon-user icon-white'></i>&nbsp;#{t('account')}".html_safe, edit_user_registration_path()%></li>
-          <li><%= link_to "<i class='icon-remove icon-white'></i>&nbsp;#{t('sign_out')}".html_safe, destroy_user_session_path(), {:method => :delete} %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "<i class='icon-user icon-white'></i>&nbsp;#{t('account')}".html_safe, edit_user_registration_path()%></li>
+            <li><%= link_to "<i class='icon-remove icon-white'></i>&nbsp;#{t('sign_out')}".html_safe, destroy_user_session_path(), {:method => :delete} %></li>
+          <% end %>
         </ul>
       </div>
     </div>

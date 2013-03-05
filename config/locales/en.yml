@@ -43,6 +43,8 @@ en:
   # ----------
   forgot_your_password: Forgot your password?
   favorite: Favorite
+  favorited: Favorited
+  favorites: Favorites
 
   # ----------
   # G
@@ -102,6 +104,7 @@ en:
   # ----------
   # Q
   # ----------
+  quick_links: Quick Links
 
   # ----------
   # R
@@ -135,6 +138,7 @@ en:
   unhappy: Unhappy?
   update: Update
   user_name_todo_lists: "%{user_name}'s Todo Lists"
+  unfavorite: Unfavorite
 
 
   # ----------
