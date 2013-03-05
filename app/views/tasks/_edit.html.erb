@@ -1,0 +1,20 @@
+<div id="edit_task_modal" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><%= "#{t('edit')} #{t('task').downcase}" %></h3>
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for([task.list.user, task.list, task], :remote => true) do |f| %>
+      <div class="form-inputs">
+        <%= f.hidden_field :list_id, :value => task.list.id %>
+        <%= f.input :description, :required => true, :autofocus => true , :as => :text,
+                    :input_html => {:rows => 2,:class => "input-block-level"}  %>
+      </div>
+      <%= f.button :submit, t('save') %>
+    <% end %>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><%= t('cancel') %></button>
+  </div>
+</div>

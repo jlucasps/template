@@ -1,0 +1,2 @@
+$("#modal_container").html("<%= j(render :partial => 'tasks/edit', :locals => {:task => @task}) %>");
+$("#edit_task_modal").modal({keyboard:false, backdrop:false});

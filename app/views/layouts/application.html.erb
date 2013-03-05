@@ -11,13 +11,12 @@
   <%= render :partial => 'shared/navbar' %>
 
   <div class="container">
-
+    <div class="row" id="bootstrap_flash_message">
+      <%= bootstrap_flash %>
+    </div>
     <% if user_signed_in? %>
       <div class="row-fluid">
         <div class="span6">
-          <div id="bootstrap_flash_message">
-            <%= bootstrap_flash %>
-          </div>
           <%= yield %>
         </div>
 
@@ -26,13 +25,10 @@
         </div>
       </div>
     <% else %>
-      <div id="bootstrap_flash_message">
-        <%= bootstrap_flash %>
-      </div>
       <%= yield %>
     <% end %>
-
   </div>
+  <div id="modal_container"></div>
 
 </body>
 </html>

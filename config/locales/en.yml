@@ -24,6 +24,7 @@ en:
   cancel_my_account: Cancel my account
   change_my_password: Change my password
   create: Create
+  cancel: Cancel
 
   # ----------
   # D
@@ -87,6 +88,7 @@ en:
   no_other_user: No other user
   new_todo_list: New Todo List 
   no_lists_yet: No lists yet
+  no_tasks_yet: No tasks yet
 
   # ----------
   # O
@@ -129,6 +131,8 @@ en:
   # T
   # ----------
   todo_lists_app: Todo Lists App
+  tasks: Tasks
+  task: Task
 
 
   # ----------
@@ -182,6 +186,9 @@ en:
           many: You can not delete the existing record (%{record})
     models:
       user: User
+      task: Task
+      list: List
+      favorite: Favorite
     attributes:
       user:
         email: Email
@@ -189,3 +196,8 @@ en:
         password_confirmation: Password confirmation
         current_password: Current password
         name: Name
+      task:
+        description: Description
+      list:
+        name: Name
+        private: Private

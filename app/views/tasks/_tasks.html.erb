@@ -1,0 +1,22 @@
+
+<div class="tasks">
+  <% if list.tasks.empty? %>
+    <%= bootstrap_alert('', t('no_tasks_yet'), Const::ALERT_INFO) %>
+  <% else %>
+    <% list.tasks.each_with_index do |task, index| %>
+      <div id="task_<%= task.id %>">
+        <%= render :partial => 'tasks/task', :locals => {:task => task, :count => index + 1} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= simple_form_for([list.user, list, Task.new], :remote => true) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :list_id, :value => list.id %>
+    <%= f.input :description, :required => true, :autofocus => true , :as => :text,
+                :input_html => {:rows => 2,:class => "input-block-level"}  %>
+  </div>
+  <%= f.button :submit, t('save') %>
+<% end %>

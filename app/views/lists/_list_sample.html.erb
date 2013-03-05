@@ -10,6 +10,7 @@
 
   <div class="span9">
     <h6><%= link_to list.name.html_safe, user_list_path(user, list) %></h6>
+    <small><%= "#{list.tasks.count} #{t('tasks').downcase}"  %></small>
   </div>
 
   <div class="span2">

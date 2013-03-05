@@ -1,0 +1,5 @@
+$("#bootstrap_flash_message").hide().html("<%= j(bootstrap_flash) %>").fadeIn();
+$("#edit_task_modal").modal('hide');
+var count = $("#task_<%= @task.id %>").find("span.badge-success").html();
+$("#task_<%= @task.id %>").html("<%= j(render :partial => 'tasks/task', :locals => {:task => @task, :count => nil} )%>");
+$("#task_<%= @task.id %>").find("span.badge-success").html(count);

@@ -10,7 +10,7 @@ class List < ActiveRecord::Base
   # Associations
   belongs_to :user
   has_many :favorites, :dependent => :destroy
-
+  has_many :tasks, :dependent => :destroy
 
   # Scopes
   default_scope order("lists.created_at DESC")

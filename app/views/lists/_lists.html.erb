@@ -1,7 +1,9 @@
-<div class="pull-right spaced">
-  <%= link_to t('new_todo_list'), new_user_list_path(user), :class => "btn btn-mini btn-success" %>
-</div>
-<br style="clear: both;"/> <hr/>
+<% if user == current_user %>
+  <div class="pull-right spaced">
+    <%= link_to t('new_todo_list'), new_user_list_path(user), :class => "btn btn-mini btn-success" %>
+  </div>
+  <br style="clear: both;"/> <hr/>
+<% end %>
 
 <% if lists.empty? %>
   <%= bootstrap_alert('', t('no_lists_yet'), Const::ALERT_INFO) %>

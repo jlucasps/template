@@ -1,0 +1,5 @@
+$("#bootstrap_flash_message").hide().html("<%= j(bootstrap_flash) %>").fadeIn();
+$("#list_<%= @task.list.id %>_tasks").find(".tasks").append("<%= j(render :partial => 'tasks/task',
+                                                                          :locals => {:task => @task, :count => @task.list.tasks.count}) %>");
+$("#task_description").val("");
+$("[rel='tooltip']").tooltip({placement: 'top'});

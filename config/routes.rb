@@ -7,6 +7,7 @@ Todoptec::Application.routes.draw do
   resources :users do
     resources :lists do
       resources :favorites
+      resources :tasks
     end
   end
 

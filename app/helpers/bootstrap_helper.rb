@@ -3,14 +3,9 @@ module BootstrapHelper
   # Retorna um ícone de 32x32
   def bootstrap_alert(sentence, messages, type)
     html = <<-HTML
-      <div class="alert alert-block #{ type }">
-        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
-        <div id="error_explanation">
-          <p class="alert-heading">
-            <b>#{sentence}</b>
-          </p>
-          <ul>#{messages}</ul>
-        </div>
+      <div class="alert #{ type }">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>#{sentence}</strong> #{messages}
       </div>
     HTML
     html.html_safe

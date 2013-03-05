@@ -1,0 +1,10 @@
+<span class="badge badge-success"><%= count %></span>
+<%= link_to "<i class='icon-trash'></i>".html_safe, [task.list.user, task.list, task], :method => :delete, :remote => true,
+            :class => "btn btn-mini spaced", :rel => :tooltip, :title => t('remove'), :confirm => t('are_you_sure') %>
+
+<%= link_to "<i class='icon-edit'></i>".html_safe, edit_user_list_task_path(task.list.user, task.list, task), :remote => true,
+            :class => "btn btn-mini spaced", :rel => :tooltip, :title => t('edit') %>
+<blockquote>
+  <p><%= task.description %></p>
+  <small><%= time_ago_in_words(task.updated_at) %></small>
+</blockquote>

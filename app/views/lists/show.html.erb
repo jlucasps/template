@@ -4,7 +4,8 @@
   <div class="span1">
     <% icon_file = @list.private? ? "lock" : "globe-blue" %>
     <% alt_text =  @list.private? ? t('private') : t('public') %>
-    <%= icon_128x128(icon_file, :width => '48px', :height => '48px', :alt => alt_text, :text => alt_text, :rel => :tooltip, :title => alt_text) %>
+    <%= icon_128x128(icon_file, :width => '48px', :height => '48px', :alt => alt_text, :text => alt_text,
+                     :rel => :tooltip, :title => alt_text) %>
     <%= icon_32x32("favorites", :class => "spaced", :rel => :tooltip, :title => t('favorited')) if favorite %>
   </div>
 
@@ -13,7 +14,9 @@
   </div>
 </div>
 
-
+<div class="row row-fluid" id="list_<%= @list.id %>_tasks">
+  <%= render :partial => 'tasks/tasks', :locals => {:list => @list} %>
+</div>
 
 <% content_for :sidebar do %>
   <%= render :partial => 'shared/quick_links' %>

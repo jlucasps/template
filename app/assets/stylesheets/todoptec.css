@@ -29,3 +29,16 @@ body {
 .spaced {
   margin: 5px;
 }
+
+.tasks span {
+  float: left;
+}
+
+.tasks a {
+  float: right;
+}
+
+.tasks blockquote {
+  margin-left: 30px;
+  margin-right: 30px;
+}

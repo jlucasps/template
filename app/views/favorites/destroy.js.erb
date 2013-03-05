@@ -1,4 +1,4 @@
-$("#bootstrap_flash_message").hide().html("<%= j(bootstrap_flash) %>").show(500);
+$("#bootstrap_flash_message").hide().html("<%= j(bootstrap_flash) %>").fadeIn();
 $("#list_<%= @favorite.list.id %>").html("<%= j(render :partial => 'lists/list_sample',
                                                        :locals => {:user => @favorite.user, :list => @favorite.list} ) %>");
 $("[rel='tooltip']").tooltip({placement: 'top'});
