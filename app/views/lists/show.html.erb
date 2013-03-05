@@ -1,10 +1,20 @@
-<h3>
-  <%= @list.name %>
-</h3>
+<div class="row row-fluid well well-small">
+  <% favorite = current_user.favorite?(@list) %>
+
+  <div class="span1">
+    <% icon_file = @list.private? ? "lock" : "globe-blue" %>
+    <% alt_text =  @list.private? ? t('private') : t('public') %>
+    <%= icon_128x128(icon_file, :width => '48px', :height => '48px', :alt => alt_text, :text => alt_text, :rel => :tooltip, :title => alt_text) %>
+    <%= icon_32x32("favorites", :class => "spaced", :rel => :tooltip, :title => t('favorited')) if favorite %>
+  </div>
+
+  <div class="span11">
+    <h3><%= @list.name %></h3>
+  </div>
+</div>
 
 
 
 <% content_for :sidebar do %>
-  <h4><%= t('other_options') %></h4>
-  <%= link_to t('new_todo_list'), new_user_list_path(@list.user), :class => "btn btn-mini btn-success" %>
+  <%= render :partial => 'shared/quick_links' %>
 <% end %>

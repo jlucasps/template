@@ -13,3 +13,7 @@
     <%= f.button :submit, t('update') %>
   </div>
 <% end %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'shared/quick_links' %>
+<% end %>

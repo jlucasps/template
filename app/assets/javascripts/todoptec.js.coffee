@@ -1,3 +1,2 @@
 jQuery ->
-  $("[rel='tooltip']").tooltip
-    placement: 'top'
+  $("[rel='tooltip']").tooltip placement: 'top'

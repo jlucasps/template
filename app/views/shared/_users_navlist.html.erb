@@ -1,7 +1,4 @@
-<h4><%= t('quick_links') %></h4>
-<%= link_to "<i class='icon-star'></i>&nbsp;#{t('favorites')}".html_safe, "#" %>
-
-<hr/>
+<%= render :partial => 'shared/quick_links' %>
 
 <h4><%= t('users') %></h4>
 <% if users.any? %>
