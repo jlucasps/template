@@ -39,4 +39,20 @@ describe List do
 
   end
 
+  it "checks default_scope order" do
+    user_bart = FactoryGirl.find_or_create(:user_bart)
+    list_bart_homework = FactoryGirl.find_or_create(:list_bart_homework)
+    list_bart_movies_to_watch = FactoryGirl.find_or_create(:list_bart_movies_to_watch)
+
+    user_bart.lists.should eq([list_bart_movies_to_watch, list_bart_homework])
+  end
+
+  it "checks public scope" do
+    user_bart = FactoryGirl.find_or_create(:user_bart)
+    list_bart_homework = FactoryGirl.find_or_create(:list_bart_homework)
+    _ = FactoryGirl.find_or_create(:list_bart_movies_to_watch)
+
+    user_bart.lists.public.should eq([list_bart_homework])
+  end
+
 end

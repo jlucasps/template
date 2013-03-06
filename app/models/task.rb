@@ -13,5 +13,4 @@ class Task < ActiveRecord::Base
   # Scopes
   default_scope order("tasks.created_at ASC")
 
-  # Public methods
 end

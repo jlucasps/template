@@ -1,7 +1,9 @@
 class FavoritesController < ApplicationController
 
   def create
-    @favorite = Favorite.create(params.extract!(:user_id, :list_id))
+    @favorite = Favorite.new(params.extract!(:list_id))
+    @favorite.user = current_user
+    @favorite.save
     respond_with @favorite.user, @favorite.list, @favorite
   end
 

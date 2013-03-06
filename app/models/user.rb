@@ -23,6 +23,6 @@ class User < ActiveRecord::Base
   end
 
   def favorite?(list)
-    self.favorites.where(:list_id => list).first
+    self.favorites.where(:list_id => list.id).first
   end
 end

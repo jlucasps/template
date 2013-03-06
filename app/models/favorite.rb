@@ -1,7 +1,7 @@
 class Favorite < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :user_id, :list_id
+  attr_accessible :list_id
 
   # Validations
   validates :user_id, :presence => true
@@ -15,5 +15,4 @@ class Favorite < ActiveRecord::Base
   # Scopes
   default_scope order("favorites.created_at DESC")
 
-  # Public methods
 end
