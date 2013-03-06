@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ".home", :type => :feature do
 
-  it "show home page" do
+  it "access home page" do
     create_logged_in_user(:user_bart)
 
     visit home_path

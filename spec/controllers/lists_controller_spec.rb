@@ -9,8 +9,8 @@ describe ListsController do
 
   describe "GET home" do
     it "assigns @other_users" do
-      other_users = [FactoryGirl.create(:user_bart), FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                     FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]
+      other_users = [FactoryGirl.find_or_create(:user_bart), FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                     FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]
       get :home
       assigns(:other_users).should eq(other_users)
     end
@@ -18,8 +18,8 @@ describe ListsController do
 
   describe "GET index" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                   FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                   FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "assigns @other_users" do
       get :index, {:user_id => user_bart.id}
@@ -42,8 +42,8 @@ describe ListsController do
 
   describe "GET new" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "assigns @user" do
       get :new, {:user_id => user_john.id}
@@ -60,8 +60,8 @@ describe ListsController do
 
   describe "POST create" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "creates a new list" do
       list_name = "List Name"
@@ -76,8 +76,8 @@ describe ListsController do
 
   describe "GET show" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "shows to user his own list" do
       list_bart_homework = FactoryGirl.find_or_create(:list_bart_homework)
@@ -89,8 +89,8 @@ describe ListsController do
 
   describe "GET edit" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "allows user to access edit of his own lists" do
       list_john_public = FactoryGirl.find_or_create(:list_john_public_list)
@@ -102,8 +102,8 @@ describe ListsController do
 
   describe "PUT update" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "allows user to update his own lists" do
       list_john_public = FactoryGirl.find_or_create(:list_john_public_list)
@@ -117,8 +117,8 @@ describe ListsController do
 
   describe "DELETE update" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
     it "allows user to delete his own lists" do
       list_john_public = FactoryGirl.find_or_create(:list_john_public_list)
@@ -132,8 +132,8 @@ describe ListsController do
 
   context "when user tries to access other user's list" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
-    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
-                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+    let(:other_users) {[user_bart, FactoryGirl.find_or_create(:user_homer), FactoryGirl.find_or_create(:user_lisa),
+                        FactoryGirl.find_or_create(:user_maggie),FactoryGirl.find_or_create(:user_marge)]}
 
 
     it "blocks access to :new action" do

@@ -8,7 +8,7 @@ FactoryGirl.define do
   end
 
   factory :user_bart, :class => User do
-    name "BartSimpson"
+    name "Bart Simpson"
     email "bart@simpson.com"
     password "dirty_boy"
     password_confirmation "dirty_boy"

@@ -48,6 +48,9 @@ group :test, :development do
   # https://github.com/jnicklas/capybara
   gem 'capybara'
 
+  # http://selenium.googlecode.com/
+  # http://code.google.com/p/selenium/source/list
+  gem 'selenium-webdriver'
 end
 
 
