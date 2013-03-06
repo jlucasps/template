@@ -1,7 +1,7 @@
 class List < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :private, :user_id
+  attr_accessible :name, :private
 
   # Validations
   validates :name, :presence => true, :allow_blank => false

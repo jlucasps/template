@@ -169,7 +169,8 @@ en:
     leave_blank_if_you_dont_want_to_change_it: leave blank if you don't want to change it.
     we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes.
     are_you_sure: Are you sure?
-
+    you_can_only_see_other_users_lists: You can only see other user's list!
+    not_allowed_action_in_private_list: Not allowed action in private list!
 
   activerecord:
     errors:

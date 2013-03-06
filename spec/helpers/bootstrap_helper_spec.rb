@@ -10,14 +10,9 @@ describe BootstrapHelper do
 
   it "creates an alert message using Twitter Bootstrap layout" do
     message = <<-HTML
-      <div class="alert alert-block alert-info">
-        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
-        <div id="error_explanation">
-          <p class="alert-heading">
-            <b>Info</b>
-          </p>
-          <ul>Hey, this is an info message!</ul>
-        </div>
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Info</strong> Hey, this is an info message!
       </div>
     HTML
     helper.bootstrap_alert(t('info'), "Hey, this is an info message!", 'alert-info').should == message
@@ -26,14 +21,9 @@ describe BootstrapHelper do
   it "asserts bootstrap success flash message" do
     flash[:success] = "Hey, this is an success message!"
     message = <<-HTML
-      <div class="alert alert-block alert-success">
-        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
-        <div id="error_explanation">
-          <p class="alert-heading">
-            <b>Success</b>
-          </p>
-          <ul>Hey, this is an success message!</ul>
-        </div>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Success</strong> Hey, this is an success message!
       </div>
     HTML
     helper.bootstrap_flash.should == message
@@ -42,14 +32,9 @@ describe BootstrapHelper do
   it "asserts bootstrap error flash message" do
     flash[:error] = "Hey, this is an error message!"
     message = <<-HTML
-      <div class="alert alert-block alert-error">
-        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
-        <div id="error_explanation">
-          <p class="alert-heading">
-            <b>Error</b>
-          </p>
-          <ul>Hey, this is an error message!</ul>
-        </div>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error</strong> Hey, this is an error message!
       </div>
     HTML
     helper.bootstrap_flash.should == message
@@ -58,14 +43,9 @@ describe BootstrapHelper do
   it "asserts bootstrap alert flash message" do
     flash[:alert] = "Hey, this is an alert message!"
     message = <<-HTML
-      <div class="alert alert-block ">
-        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
-        <div id="error_explanation">
-          <p class="alert-heading">
-            <b>Attention</b>
-          </p>
-          <ul>Hey, this is an alert message!</ul>
-        </div>
+      <div class="alert ">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Attention</strong> Hey, this is an alert message!
       </div>
     HTML
     helper.bootstrap_flash.should == message
@@ -74,14 +54,9 @@ describe BootstrapHelper do
   it "asserts bootstrap notice flash message" do
     flash[:notice] = "Hey, this is an notice message!"
     message = <<-HTML
-      <div class="alert alert-block alert-info">
-        <a class="close" data-dismiss="alert" href="#"><i class="icon-large icon-remove-circle"></i></a>
-        <div id="error_explanation">
-          <p class="alert-heading">
-            <b>Info</b>
-          </p>
-          <ul>Hey, this is an notice message!</ul>
-        </div>
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Info</strong> Hey, this is an notice message!
       </div>
     HTML
     helper.bootstrap_flash.should == message

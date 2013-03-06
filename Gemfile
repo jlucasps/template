@@ -32,6 +32,10 @@ group :test, :development do
   # https://github.com/thoughtbot/factory_girl_rails
   gem 'factory_girl_rails', "~> 4.0"
 
+  # Makes tests easy on the fingers and the eyes
+  # https://github.com/thoughtbot/shoulda
+  gem 'shoulda'
+
   # The instafailing RSpec progress bar formatter
   # https://github.com/jeffkreeftmeijer/fuubar
   gem 'fuubar'

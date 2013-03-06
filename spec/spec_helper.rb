@@ -5,8 +5,12 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'factory_girl'
 require 'simplecov'
+require 'factory_girl_patch'
 require 'capybara/rails'
 require 'capybara/rspec'
+
+FactoryGirl.register_strategy(:find_or_create, FactoryGirlPatch)
+
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

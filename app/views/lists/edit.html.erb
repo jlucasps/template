@@ -4,7 +4,6 @@
   <h2><%= t('edit_todo_list') %></h2>
 
   <div class="form-inputs">
-    <%= f.hidden_field :user_id, :value => @list.user.id %>
     <%= f.input :name, :required => true, :autofocus => true %>
     <%= f.input :private, :inline_label =>  t('only_you_can_see_private_lists') %>
   </div>
