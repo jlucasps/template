@@ -1,12 +1,13 @@
 require 'spec_helper'
 
-describe ".create", :type => :feature, :js => true do
+describe ".destroy", :type => :feature, :js => true do
 
-  it "set list_bart_homework as favorite for user_john" do
+  it "unset list_bart_homework as favorite for user_john" do
 
     user_bart = FactoryGirl.create(:user_bart)
     list_bart_homework = FactoryGirl.find_or_create(:list_bart_homework)
     create_logged_in_user(:user_john)
+    FactoryGirl.create(:favorite_john_bart_homework)
 
     visit home_path
     visit user_lists_path(user_bart)
@@ -15,9 +16,9 @@ describe ".create", :type => :feature, :js => true do
     page.should have_content list_bart_homework.name
 
     click_link I18n.t('options')
-    click_link I18n.t('favorite')
+    click_link I18n.t('unfavorite')
 
-    page.should have_content I18n.t('flash.actions.create.notice', :resource_name => Favorite.to_s)
+    page.should have_content I18n.t('flash.actions.destroy.notice', :resource_name => Favorite.to_s)
 
   end
 
