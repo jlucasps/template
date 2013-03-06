@@ -1,6 +1,5 @@
 module BootstrapHelper
 
-  # Retorna um ícone de 32x32
   def bootstrap_alert(sentence, messages, type)
     html = <<-HTML
       <div class="alert #{ type }">

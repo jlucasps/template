@@ -30,7 +30,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    if !@list.is_the_owner?(current_user)
+    if !@list.is_the_owner?(current_user) and @list.private
       flash[:alert] = t('messages.not_allowed_action_in_private_list') 
       redirect_to home_path
     else
@@ -40,7 +40,6 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
-    redirect_to home_path if !@list.is_the_owner?(current_user)
     respond_with @list.user, @list
   end
 

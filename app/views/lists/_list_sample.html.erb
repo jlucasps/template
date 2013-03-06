@@ -5,7 +5,7 @@
     <% icon_file = list.private? ? "lock" : "globe-blue" %>
     <% alt_text =  list.private? ? t('private') : t('public') %>
     <%= icon_128x128(icon_file, :width => '32px', :height => '32px', :alt => alt_text, :text => alt_text, :rel => :tooltip, :title => alt_text) %>
-    <%= icon_32x32("favorites", :class => "spaced", :rel => :tooltip, :title => t('favorited')) if favorite %>
+    <%= icon_24x24("favorites", :class => "spaced", :rel => :tooltip, :title => t('favorited')) if favorite %>
   </div>
 
   <div class="span9">

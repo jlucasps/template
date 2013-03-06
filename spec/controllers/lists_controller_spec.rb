@@ -58,6 +58,22 @@ describe ListsController do
     end
   end
 
+  describe "POST create" do
+    let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
+    let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
+                        FactoryGirl.create(:user_maggie),FactoryGirl.create(:user_marge)]}
+
+    it "creates a new list" do
+      list_name = "List Name"
+      create_params = {:user_id => user_john.id, :list => {:name => list_name, :private => false}}
+
+      post :create, create_params
+      assigns(:user).should eq(user_john)
+      assigns(:list).should be_valid
+      assigns(:list).name.should eq(list_name)
+    end
+  end
+
   describe "GET show" do
     let(:user_bart) {FactoryGirl.find_or_create(:user_bart)}
     let(:other_users) {[user_bart, FactoryGirl.create(:user_homer), FactoryGirl.create(:user_lisa),
@@ -79,7 +95,7 @@ describe ListsController do
     it "allows user to access edit of his own lists" do
       list_john_public = FactoryGirl.find_or_create(:list_john_public_list)
       list_params = {:user_id => user_john.id, :id => list_john_public.id}
-      get :show, list_params
+      get :edit, list_params
       assigns(:list).should eq(list_john_public)
     end
   end
